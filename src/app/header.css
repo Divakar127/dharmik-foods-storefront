@@ -1,0 +1,24 @@
+/* One desktop row: brand, wide search, consistently aligned utility links. */
+.site-header .header-main { display: grid; grid-template-columns: auto minmax(240px,1fr) auto; align-items: center; gap: 24px; min-height: 100px; padding-top: 20px; padding-bottom: 20px; }
+.header-main>.brand { grid-column: 1; grid-row: 1; margin: 0; }
+.header-main>.search-container { grid-column: 2; grid-row: 1; order: 0; min-width: 0; width: 100%; max-width: none; }
+.header-main>.header-actions { grid-column: 3; grid-row: 1; display: flex; align-items: center; gap: 20px; justify-self: end; margin: 0; }
+.search-container .header-search { height: 54px; width: 100%; max-width: none; margin: 0; border: 1px solid var(--control-border); border-radius: 6px; background: var(--surface); }
+.header-search input { height: 100%; min-width: 0; padding: 15px 17px; font-size: 16px; font-weight: 400; }
+.header-search button { align-self: stretch; width: 56px; flex-shrink: 0; border: 0; background: var(--action-primary); color: #fff; }
+.header-actions .shop-links { display: flex; align-items: center; gap: 20px; }
+.header-actions .saved-link,.header-actions .shop-link { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; padding: 0; margin: 0; font-size: 14px; font-weight: 600; line-height: 1; white-space: nowrap; color: var(--text-strong); }
+.header-actions .saved-link>span:last-child,.header-actions .shop-link>span:last-child { display: inline; line-height: 1; }
+.header-actions .saved-link-icon,.header-actions .cart-icon { display: grid; place-items: center; position: relative; flex-shrink: 0; width: 24px; height: 24px; padding: 0; }
+.header-actions .saved-count,.header-actions .cart-icon b { position: absolute; top: -9px; right: -8px; display: block; min-width: 19px; height: 19px; padding: 0 4px; border: 2px solid var(--surface); border-radius: 12px; background: var(--action-primary); color: #fff; font-size: 10px; font-weight: 700; line-height: 15px; text-align: center; }
+.header-actions .theme-toggle { width: 44px; min-height: 44px; padding: 10px; gap: 0; border-color: var(--border); }
+.header-actions .theme-toggle span { display: none; }
+.category-nav { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.category-nav .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 52px; overflow-x: auto; }
+.category-nav a { display: inline-flex; align-items: center; gap: 9px; flex-shrink: 0; min-height: 52px; font-size: 14px; font-weight: 500; line-height: 1; white-space: nowrap; color: var(--text-strong); }
+.category-nav .all-categories { padding-right: 24px; font-weight: 600; }
+.category-nav .nav-collections { margin-left: 0; color: var(--accent-text); font-weight: 600; }
+@media(max-width:1050px) { .site-header .header-main { gap: 20px; }.header-actions,.header-actions .shop-links { gap: 16px; }.header-main .brand>span { font-size: 23px; } }
+@media(max-width:900px) { .site-header .header-main { grid-template-columns: auto minmax(180px,1fr) auto; gap: 18px; }.header-actions .saved-link>span:last-child,.header-actions .shop-link>span:last-child { display: none; }.header-main .brand { gap: 8px; }.header-main .brand>span { font-size: 22px; }.header-main .brand-mark { width: 32px; }.header-main .brand small { font-size: 9px; }.category-nav .container { justify-content: flex-start; } }
+@media(max-width:640px) { .site-header .header-main { grid-template-columns: minmax(0,1fr) auto; gap: 16px 12px; padding-top: 17px; padding-bottom: 17px; }.header-main>.header-actions { grid-column: 2; grid-row: 1; gap: 14px; }.header-main>.search-container { grid-column: 1/-1; grid-row: 2; }.header-actions .shop-links { gap: 14px; }.header-main .brand>span { font-size: 21px; }.header-main .brand-mark { width: 29px; }.search-container .header-search { height: 52px; }.header-search input { padding: 14px 16px; }.category-nav .container { gap: 21px; }.category-nav a { min-height: 48px; }.category-nav .all-categories { padding-right: 20px; } }
+@media(max-width:360px) { .header-main .brand>span { font-size: 18px; }.header-main .brand-mark { width: 25px; }.header-main .brand { gap: 6px; }.header-main>.header-actions,.header-actions .shop-links { gap: 10px; } }

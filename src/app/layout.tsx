@@ -1,0 +1,26 @@
+import { ThemeProvider } from "../shared/theme";
+import { themeInit } from "../shared/theme-init";
+import "@fontsource/instrument-sans/latin-400.css";
+import "@fontsource/instrument-sans/latin-500.css";
+import "@fontsource/instrument-sans/latin-600.css";
+import "@fontsource/instrument-sans/latin-700.css";
+import "@fontsource/instrument-serif/latin-400.css";
+import "@fontsource/noto-sans-tamil/400.css";
+import "@fontsource/noto-sans-tamil/600.css";
+import type { Metadata } from "next";
+import { SavedProvider } from "../components/saved";
+import { CommerceProvider } from "../components/commerce";
+import "./globals.css";
+import "./commerce.css";
+import "./experience.css";
+import "../shared/theme.css";
+import "./polish.css";
+import "../shared/refinement.css";
+import "./product-cards.css";
+import "./header.css";
+import "../shared/controls.css";
+import "./hero-banner.css";
+import "./contemporary.css";
+import "./shopping-experience.css";
+export const metadata: Metadata = { title: "Dharmik Foods | Everyday food essentials", description: "Shop the Dharmik Foods catalog. Explore grains, nuts, pantry essentials and drinks with clear ingredients, allergens and nutrition information." };
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="en" data-theme="light" suppressHydrationWarning><head><script id="theme-init" dangerouslySetInnerHTML={{__html:themeInit}}/></head><body><ThemeProvider><SavedProvider><CommerceProvider>{children}</CommerceProvider></SavedProvider></ThemeProvider></body></html>; }

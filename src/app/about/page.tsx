@@ -1,0 +1,17 @@
+import { Header, Footer } from "../../components/shell";
+import { getAbout } from "../../lib/api";
+export const dynamic = "force-dynamic";
+export const metadata = { title: "Our Story | Dharmik Foods", description: "Traditional ingredients, useful knowledge and a place in today's kitchen. Discover the purpose behind Dharmik Foods." };
+export default async function AboutPage() {
+ const content = await getAbout();
+ return <><Header/><main id="main-content" className="container story-page"><nav className="breadcrumb"><a href="/">Home</a> / <span>About us</span></nav>
+ <section className="story-opening"><div><p className="eyebrow">OUR PURPOSE / DHARMIK FOODS</p><h1>Rooted in tradition.<br/><em>Made for today.</em></h1><p className="story-lead">We believe the everyday kitchen is a good place to bring tradition back.</p><p>{content.intro}</p></div><aside className="story-manifesto"><span className="story-symbol">தர்மம்</span><p>Familiar ingredients.<br/>Knowledge worth keeping.<br/>A place at today’s table.</p><span>THE THOUGHT BEHIND OUR PANTRY</span></aside></section>
+ <section className="story-editorial"><figure><img src="/campaigns/tradition.webp" alt="Illustrative image of millet being poured into an earthenware bowl"/><figcaption>Traditional ingredients, seen with fresh eyes. Illustrative campaign image.</figcaption></figure><div><p className="eyebrow">MORE THAN A RETURN TO THE PAST</p><h2>{content.definition_title}</h2><p>{content.definition}</p><p>For us, encouraging tradition means making it practical: knowing an ingredient’s name, understanding how it is used, and finding a place for it in the meals we actually cook.</p><a href="/#catalog" className="text-link">Meet the everyday pantry →</a></div></section>
+ <section className="story-context"><div><p className="eyebrow">WHY THIS BUSINESS EXISTS</p><h2>{content.story_title}</h2></div><div>{content.story_paragraphs.map(p => <p key={p}>{p}</p>)}</div></section>
+ <section className="story-values"><div className="section-heading"><div><p className="eyebrow">WHAT WE WANT TO KEEP ALIVE</p><h2>{content.why_title}</h2><p>{content.why_intro}</p></div></div><div className="story-values-grid">{content.reasons.map((r,i) => <article key={r.title}><span>0{i+1}</span><h3>{r.title}</h3><p>{r.text}</p></article>)}</div></section>
+ <section className="story-practice"><div><p className="eyebrow">OUR PURPOSE, IN PRACTICE</p><h2>Useful information.<br/>Thoughtful choices.<br/>Every single day.</h2><p>Food and the vessels we cook in are part of the same kitchen story. Our pantry makes room for both familiar ingredients and the craft of clay cookware.</p></div><ol>{content.approach.map(step => <li key={step.title}><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol></section>
+ <section className="story-promise"><p className="eyebrow">{content.promise_title}</p><blockquote>{content.promise}</blockquote><span>DHARMIK FOODS</span></section>
+ <section className="story-closing"><div><h2>{content.closing_title}</h2><p>{content.closing_text}</p></div><a className="button" href="/#catalog">Explore the pantry →</a></section>
+ <aside className="story-sources"><h2>Keep exploring</h2><p>Read more about traditional food knowledge and millet diversity.</p>{content.sources.map(s => <a href={s.url} key={s.url} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}<a href="/image-credits">Image sources & campaign imagery</a></aside>
+ </main><Footer/></>;
+}

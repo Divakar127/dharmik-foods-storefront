@@ -1,0 +1,115 @@
+/* Storefront finish: photographic categories, open sections, one visual language. */
+:root {
+  --section-tint: #f2f7f3;
+  --section-edge: #dce8df;
+  --editorial-surface: #f4f8f5;
+  --manifesto-surface: #edf5ef;
+  --newsletter-surface: #edf5ef;
+}
+:root[data-theme="dark"] {
+  --section-tint: #1d2922;
+  --section-edge: #3d5144;
+  --editorial-surface: #202e25;
+  --manifesto-surface: #24352a;
+  --newsletter-surface: #24352a;
+}
+.utility-bar { background: var(--control-surface); color: var(--control-ink); }
+.utility-bar a { color: var(--control-ink); }
+.utility-bar :focus-visible { outline-color: var(--control-ink); }
+.category-nav { border-top-color: var(--surface-inset); }
+.category-nav .all-categories,.category-nav .nav-collections { color: var(--control-ink); }
+.category-nav .nav-collections { text-decoration: underline; text-underline-offset: 7px; text-decoration-color: var(--control-ring); text-decoration-thickness: 2px; }
+.home-main { padding-top: 24px; }
+.rotating-hero.image-only-hero { border-radius: 24px; }
+.benefit-strip { border: 0; border-radius: 0; background: transparent; padding: 24px 0; margin-top: 8px; }
+.benefit-strip>div { border: 0; justify-content: flex-start; padding: 0 16px; }
+.benefit-strip>div:first-child { padding-left: 0; }
+.benefit-strip>div:last-child { padding-right: 0; }
+.benefit-strip svg { color: var(--control-ink); background: var(--control-active); box-sizing: content-box; padding: 11px; border-radius: 14px; width: 22px; height: 22px; }
+.benefit-strip strong { font-size: 15px; font-weight: 600; }
+.benefit-strip small { font-size: 13px; line-height: 1.5; }
+.category-section { margin-top: 28px; }
+.section-heading { margin-bottom: 28px; }
+.section-heading h2 { font-size: clamp(28px,2.6vw,36px); letter-spacing: -.045em; line-height: 1.15; }
+.home-main .section-heading .eyebrow { display: none; }
+.text-link { color: var(--control-ink); font-weight: 500; }
+.category-grid { gap: 18px; }
+.category-tile { display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: 0; border: 1px solid var(--border); background: var(--surface); border-radius: 20px; overflow: hidden; transition: border-color 160ms var(--ui-ease),transform 160ms var(--ui-ease); }
+.category-tile img { width: 100%; height: 150px; border-radius: 0; object-fit: cover; transition: transform 600ms var(--ui-ease); }
+.category-tile>div { position: relative; background: var(--surface); padding: 18px; }
+.category-tile h3 { margin: 0 0 8px; font-size: 17px; line-height: 1.4; font-weight: 600; }
+.category-tile>div>span { font-size: 13px; justify-content: space-between; color: var(--text-secondary); }
+.category-tile>div>span>svg { color: var(--control-ink); }
+.sugar-home-section { position: relative; isolation: isolate; border: 0; margin-top: 64px; padding: 32px 0; }
+.sugar-home-section::before { content: ""; position: absolute; inset: 0 -24px; z-index: -1; border-radius: 28px; background: var(--section-tint); }
+.sugar-home-section .section-heading p:not(.eyebrow) { max-width: 65ch; }
+.catalog-section,.lifestyle-section { margin-top: 64px; }
+.catalog-controls { border-color: transparent; background: var(--control-surface); }
+.results-toolbar { border-color: transparent; background: var(--control-surface); }
+.filter-sidebar { border-color: var(--section-edge); }
+.filter-sidebar fieldset { border-bottom-color: var(--section-edge); }
+.reference-product-card { border-color: var(--border); box-shadow: 0 4px 18px var(--shadow); }
+.product-category-label { background: var(--control-surface); color: var(--control-ink); }
+.lifestyle-section { border: 0; }
+.lifestyle-grid { gap: 16px; }
+.lifestyle-card,.lifestyle-card.lifestyle-1,.lifestyle-card.lifestyle-2,.lifestyle-card.lifestyle-3 { background: var(--surface); border: 1px solid var(--section-edge); border-radius: 20px; }
+.lifestyle-icon { display: inline-flex; padding: 12px; border-radius: 14px; background: var(--control-active); color: var(--control-ink); }
+.lifestyle-icon svg { width: 24px; height: 24px; }
+.lifestyle-card h3 { font-size: 19px; letter-spacing: -.025em; }
+.lifestyle-card p { font-size: 15px; }
+.lifestyle-link { color: var(--control-ink); }
+.food-guide { background: var(--control-surface); border: 0; border-radius: 24px; }
+.food-guide .eyebrow { display: none; }
+.food-guide h2 { font-size: 34px; letter-spacing: -.04em; }
+.guide-grid svg { color: var(--control-ink); }
+.newsletter-section { border: 1px solid var(--section-edge); border-radius: 24px; padding: 40px; background: var(--newsletter-surface); }
+.newsletter-section .eyebrow { color: var(--control-ink); text-transform: none; letter-spacing: .015em; }
+.newsletter-section h2 { font-size: 34px; letter-spacing: -.04em; }
+.site-footer { background: #132d23; }
+.footer-topline { padding-top: 28px; padding-bottom: 28px; }
+.footer-grid { padding-top: 40px; padding-bottom: 24px; }
+.story-opening h1 { font-family: "Instrument Sans","Noto Sans Tamil",sans-serif; font-size: clamp(40px,4.5vw,64px); font-weight: 600; letter-spacing: -.05em; }
+.story-manifesto,.story-values-grid article,.story-promise { border-radius: 24px; }
+.story-manifesto { border-color: var(--section-edge); }
+.story-values-grid article { border-top: 1px solid var(--section-edge); background: var(--editorial-surface); }
+.story-editorial img,.sugar-intro { border-radius: 24px; }
+.story-promise { background: #132d23; }
+.story-opening p.story-lead { font-size: 22px; }
+@media(hover:hover) and (pointer:fine) {
+  .category-tile:hover { transform: translateY(-2px); border-color: var(--control-border); }
+  .category-tile:hover img { transform: scale(1.025); }
+  .lifestyle-card:hover { border-color: var(--control-border); background: var(--control-surface); }
+}
+@media(max-width:960px) {
+  .benefit-strip>div { padding: 14px 12px; }
+  .benefit-strip>div:nth-child(-n+2) { border: 0; }
+  .benefit-strip>div:first-child { padding-left: 12px; }
+  .category-tile img { height: 145px; }
+}
+@media(max-width:600px) {
+  .home-main { padding-top: 16px; }
+  .rotating-hero.image-only-hero { border-radius: 18px; }
+  .benefit-strip { margin-top: 12px; padding: 8px 0; gap: 8px; }
+  .benefit-strip>div,.benefit-strip>div:first-child,.benefit-strip>div:last-child { padding: 8px 0; gap: 9px; }
+  .benefit-strip svg { width: 18px; height: 18px; padding: 8px; border-radius: 10px; }
+  .benefit-strip strong { font-size: 13px; }
+  .benefit-strip small { font-size: 12px; }
+  .section-heading { margin-bottom: 22px; }
+  .section-heading h2 { font-size: 28px; }
+  .category-grid { gap: 12px; }
+  .category-tile { border-radius: 16px; }
+  .category-tile img { height: 125px; }
+  .category-tile>div { padding: 14px; }
+  .category-tile h3 { font-size: 16px; }
+  .category-tile>div>span { font-size: 12px; }
+  .sugar-home-section { margin-top: 36px; padding: 26px 0; }
+  .sugar-home-section::before { left: -9px; right: -9px; border-radius: 22px; }
+  .catalog-section,.lifestyle-section { margin-top: 40px; }
+  .lifestyle-card { border-radius: 18px; }
+  .food-guide { border-radius: 20px; }
+  .food-guide h2 { font-size: 29px; }
+  .newsletter-section { padding: 26px 22px; border-radius: 20px; }
+  .newsletter-section h2 { font-size: 28px; }
+  .story-opening h1 { font-size: 42px; }
+}
+@media(prefers-reduced-motion:reduce) { .category-tile:hover,.category-tile:hover img { transform: none; } }

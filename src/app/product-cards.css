@@ -1,0 +1,43 @@
+/* Reference-led product cards; product grids retain their current columns. */
+.reference-product-card { padding:9px; border:1px solid var(--surface-inset); border-radius:22px; background:var(--surface); box-shadow:0 5px 22px var(--shadow); overflow:visible; }
+.reference-product-card:hover { box-shadow:0 9px 26px var(--shadow); border-color:var(--border); }
+.reference-product-card .product-link { height:auto; flex:1; min-width:0; }
+.reference-product-card .product-image { aspect-ratio:1 / 1; flex-shrink:0; border:0; border-radius:12px; background:var(--photo-surface); }
+.reference-product-card .product-image img { width:100%; height:100%; object-fit:cover; }
+.reference-product-card .save-button { top:17px; right:17px; box-shadow:0 2px 8px var(--shadow); }
+.reference-product-card .product-info { padding:18px 10px 0; }
+.product-category-label { align-self:flex-start; padding:4px 8px; border-radius:4px; background:var(--notice-surface); color:var(--accent-text); font-size:13px; font-weight:400; line-height:1.5; margin-bottom:16px; }
+.reference-product-card .product-info h3 { display:block; overflow:visible; min-height:54px; margin:0 0 12px; font-size:18px; line-height:1.5; font-weight:500; letter-spacing:-.015em; }
+.reference-product-card .product-pack { display:block; min-height:0; margin:0; font-size:inherit; font-weight:inherit; color:inherit; }
+.product-excerpt { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; font-size:15px; line-height:1.65; color:var(--text-secondary); min-height:50px; margin:0 0 12px; }
+.reference-product-card .product-sku { font-size:12px; line-height:1.5; margin:auto 0 0; padding-bottom:4px; color:var(--text-secondary); }
+.card-purchase-row { display:grid; grid-template-columns:minmax(0,1fr) 48px; gap:10px; align-items:center; padding:20px 10px 10px; }
+.card-price { min-width:0; }
+.card-price>strong { display:block; font-size:23px; font-weight:600; line-height:1.3; letter-spacing:-.025em; font-variant-numeric:tabular-nums; }
+.reference-product-card .product-stock { font-size:12px; line-height:1.6; margin:6px 0 0; }
+.card-purchase-row .add-cart-wrap.compact { display:contents; }
+.card-purchase-row .add-cart-button { position:relative; width:48px; height:50px; min-height:50px; padding:10px; border-radius:11px; box-shadow:0 3px 8px var(--shadow); }
+.card-purchase-row .cart-feedback { grid-column:1 / -1; margin:0; font-size:13px; line-height:1.5; overflow-wrap:anywhere; }
+.card-cart-count { position:absolute; top:-7px; right:-5px; display:grid; place-items:center; min-width:22px; height:22px; padding:0 4px; border-radius:12px; background:var(--text-strong); color:var(--surface); border:2px solid var(--surface); font-size:11px; line-height:1; }
+.reference-product-card.unavailable .product-image img { filter:grayscale(1); opacity:.65; }
+.reference-product-card .unavailable-label { font-size:12px; }
+.reference-product-card .product-link:focus-visible { border-radius:12px; }
+@media(max-width:600px) {
+  .reference-product-card { padding:7px; border-radius:17px; }
+  .reference-product-card .product-image { border-radius:10px; }
+  .reference-product-card .save-button { top:12px; right:12px; }
+  .reference-product-card .product-info { padding:14px 5px 0; }
+  .product-category-label { font-size:12px; padding:4px 6px; margin-bottom:12px; }
+  .reference-product-card .product-info h3 { font-size:16px; min-height:72px; line-height:1.5; margin-bottom:10px; }
+  .product-excerpt { font-size:14px; min-height:46px; margin-bottom:10px; }
+  .reference-product-card .product-sku { font-size:11px; }
+  .card-purchase-row { grid-template-columns:minmax(0,1fr) 44px; padding:16px 5px 7px; gap:5px; }
+  .card-price>strong { font-size:20px; }
+  .card-purchase-row .add-cart-button { width:44px; height:46px; min-height:46px; padding:9px; border-radius:10px; }
+  .reference-product-card .product-stock { font-size:11px; }
+}
+@media(max-width:360px) {
+  .card-price>strong { font-size:17px; letter-spacing:-.04em; }
+  .card-purchase-row { gap:4px; }
+}
+@media(prefers-reduced-motion:reduce) { .reference-product-card:hover { transform:none; } }
